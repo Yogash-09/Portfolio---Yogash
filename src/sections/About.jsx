@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { NeuralNoise } from '../components/ui/NeuralNoise'
 import ScrollReveal from '../components/ScrollReveal'
-import profileImage from '../images/profile.jpeg'
+import profileImage from '../images/Profile.jpeg'
 
 export default function About() {
   const strengths = [
