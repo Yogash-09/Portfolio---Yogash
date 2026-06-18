@@ -1,0 +1,239 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+    background-color: #000000;
+    color: #e5e5e5;
+    font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    color: #ffffff;
+  }
+
+  p:not([class]) {
+    color: rgba(229, 229, 229, 0.75);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Neural Dark Cards */
+  .card {
+    @apply rounded-2xl p-6 border border-white/10 shadow-md smooth-transition relative overflow-hidden;
+    background: rgba(10, 10, 10, 0.95);
+  }
+
+  .card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 pointer-events-none;
+  }
+
+  .card:hover {
+    border-color: rgba(0, 255, 247, 0.3);
+    box-shadow: 0 0 30px 0 rgba(0, 255, 247, 0.1);
+  }
+
+  .card-lg {
+    @apply rounded-2xl p-8 border border-white/10 shadow-md smooth-transition;
+    background: rgba(10, 10, 10, 0.95);
+  }
+
+  .glass {
+    @apply backdrop-blur-md border border-white/10 rounded-2xl shadow-md;
+    background: rgba(5, 5, 5, 0.85);
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md border border-white/10 rounded-2xl shadow-md;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Neural Buttons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white px-6 py-3 rounded-xl font-semibold smooth-transition shadow-md active:scale-95;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+
+  .btn-secondary {
+    @apply border-2 border-cyan-400/60 text-cyan-300 px-6 py-3 rounded-xl font-semibold smooth-transition active:scale-95;
+    background: rgba(0, 255, 247, 0.05);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-secondary:hover {
+    @apply -translate-y-0.5 border-cyan-400;
+    background: rgba(0, 255, 247, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+  }
+
+  .btn-small {
+    @apply text-white px-4 py-2 rounded-lg font-medium smooth-transition shadow-md active:scale-95;
+    background: linear-gradient(135deg, #ff2d78, #a855f7);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-small:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 0 15px rgba(255, 45, 120, 0.4);
+  }
+
+  /* Neural Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .text-accent {
+    color: #00fff7;
+  }
+
+  /* Neural Section Divider */
+  .section-divider {
+    @apply w-12 h-1 rounded-full;
+    background: linear-gradient(90deg, #ff2d78, #a855f7, #00fff7);
+  }
+
+  /* Neural selection highlight */
+  .neural-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 247, 0.2), 0 0 40px rgba(168, 85, 247, 0.1);
+  }
+
+  .neural-border {
+    border: 1px solid rgba(0, 255, 247, 0.2);
+  }
+
+  .neural-border:hover {
+    border-color: rgba(0, 255, 247, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 247, 0.15);
+  }
+
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .scroll-reveal {
+    @apply opacity-0 translate-y-8;
+  }
+
+  .link-hover {
+    @apply relative smooth-transition;
+  }
+
+  .link-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 smooth-transition;
+    background: linear-gradient(90deg, #ff2d78, #a855f7, #00fff7);
+  }
+
+  .link-hover:hover::after {
+    @apply w-full;
+  }
+
+  /* Elevation Classes */
+  .elevation-1 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .elevation-2 {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  }
+
+  .elevation-3 {
+    box-shadow: 0 0 40px rgba(0, 255, 247, 0.12), 0 12px 32px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 247, 0.6);
+}
+
+/* Scroll progress bar - Premium Style */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #ff2d78, #a855f7, #00fff7);
+  transform-origin: left;
+  box-shadow: 0 0 12px 0 rgba(0, 255, 247, 0.6);
+  z-index: 9999;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text selection */
+::selection {
+  background: rgba(168, 85, 247, 0.4);
+  color: #ffffff;
+}
+
+/* Link styles — nav/button links override this with explicit classes */
+a:not([class]) {
+  color: #00fff7;
+  transition: color 0.3s ease;
+}
+a:not([class]):hover {
+  color: #a855f7;
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 247, 0.4);
+}
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e5e5e5;
+  @apply rounded-lg smooth-transition;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: rgba(0, 255, 247, 0.5);
+}
