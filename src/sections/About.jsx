@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { NeuralNoise } from '../components/ui/NeuralNoise'
 import ScrollReveal from '../components/ScrollReveal'
+import profileImage from '../images/profile.jpeg'
 
 export default function About() {
   const strengths = [
@@ -11,9 +12,9 @@ export default function About() {
       icon: '👨‍💻'
     },
     {
-      title: 'Game Development',
-      description: 'Creating interactive games with Unity, focusing on gameplay mechanics and user experience',
-      icon: '🎮'
+      title: 'App Development',
+      description: 'Creating interactive mobile and web applications with modern frameworks',
+      icon: '📱'
     }
   ]
 
@@ -130,12 +131,16 @@ export default function About() {
                 {/* Profile Image Area */}
                 <div className="mb-10">
                   <motion.div
-                    className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-500/30 via-purple-500/20 to-cyan-500/30 h-64 flex items-center justify-center text-8xl shadow-md"
+                    className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-500/30 via-purple-500/20 to-cyan-500/30 h-80 flex items-center justify-center shadow-md"
                     whileHover={{ scale: 1.03 }}
                   >
-                    👨‍💻
+                    <img 
+                      src={profileImage}
+                      alt="Profile"
+                      className="w-full h-full object-contain"
+                    />
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
+                      className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                     />

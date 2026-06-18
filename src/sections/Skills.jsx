@@ -26,9 +26,9 @@ export default function Skills() {
       tech: 'Docker, AWS EC2, Linux, CI/CD(Basic)'
     },
     {
-      title: 'Game Development',
-      description: 'Developing interactive applications and game mechanics with real-time user interaction.',
-      tech: 'Unity,3D Design,Blender,Game Mechanics.'
+      title: 'App Development',
+      description: 'Cross-platform mobile applications with native-like performance and smooth UX',
+      tech: 'Flutter with Dart'
     },
     {
       title: 'Full-Stack Development',

@@ -87,7 +87,7 @@ export default function Hero() {
         {/* Subheading - Clear Positioning */}
         <motion.div variants={itemVariants} className="mb-8">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-            Full Stack & Game Developer
+            Full Stack & App Developer
           </h2>
           <motion.div
             className="w-16 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-full mx-auto mt-6"
